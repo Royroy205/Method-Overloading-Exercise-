@@ -6,43 +6,47 @@
         {
             var x = 12;
             var y = 25;
-            var indAdd = add(x, y);
+            var indAdd = Add(x, y);
             Console.WriteLine(indAdd);
 
-            var decAdd = add(100.00m, 200m);
+            var decAdd = Add(100.00m, 200m);
             Console.WriteLine(decAdd);
 
 
-            var boolAdd = add(2, 2, true);
+            var boolAdd = Add(0, 1, true);
             Console.WriteLine(boolAdd);
 
         }
-        public static int add(int x, int y)
+        public static int Add(int x, int y)
         {
             return x + y;
         }
-        public static decimal add(decimal x, decimal y)
+        public static decimal Add(decimal x, decimal y)
         {
             return x + y;
 
         }
-        public static string add(int num1, int num2, bool withDollars)
+        public static string Add(int num1, int num2, bool withDollar)
         {
-            int sum = num1 = num2;
+            int sum = num1 + num2;
 
-            if (withDollars && sum > 1)
+            if (withDollar && sum > 1)
             {
                 return $"{sum} dollars";
             }
-            else if (withDollars && sum == 1)
+            else if (withDollar && sum == 1)
             {
                 return $"{sum} dollar";
             }
-            else
+            else if (withDollar && sum < 1)
             {
-                return $"{sum}";
-            }
+                return "Not enough money";
 
+            }
+            else 
+            { 
+              return $"{sum}";
+            }
 
 
         }
